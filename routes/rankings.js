@@ -215,8 +215,10 @@ router.post("/getHighscores", (req, res, next) => {
                         }
                     });
                 } else {
+                    // success anyway but without userRank
                     res.json({
-                        success: false
+                        success: true,
+                        allTime: highscores
                     });
                 }
             });
