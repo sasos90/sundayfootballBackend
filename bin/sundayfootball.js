@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-let debug = require('debug')('tappytapBackend:server'),
+let debug = require('debug')('sundayfootballBackend:server'),
   db = require('../models/db'),
   http = require('http'),
   app = require('../app');
