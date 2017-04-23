@@ -1,9 +1,9 @@
 {
-  "name": "tappytapBackend",
-  "version": "0.0.1",
+  "name": "sundayfootballBackend",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/sundayfootball"
   },
   "dependencies": {
     "body-parser": "~1.15.1",

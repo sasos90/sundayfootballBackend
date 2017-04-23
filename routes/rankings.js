@@ -215,12 +215,39 @@ router.post("/getHighscores", (req, res, next) => {
                         }
                     });
                 } else {
+                    // success anyway but without userRank
                     res.json({
-                        success: false
+                        success: true,
+                        allTime: highscores
                     });
                 }
             });
         }
+    });
+});
+
+/* POST update name. */
+router.post("/updateName", (req, res, next) => {
+
+    let request = req.body;
+
+    Rank.update({
+        deviceUuid: request.deviceUuid
+    }, {
+        $set: { name: request.name }
+    }, {
+        multi: true
+    }, (err, numAffected) => {
+        if (err) {
+            res.json({
+                success: false
+            });
+            return;
+        }
+        res.json({
+            success: true,
+            numAffected: numAffected
+        });
     });
 });
 

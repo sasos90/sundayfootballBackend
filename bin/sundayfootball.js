@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-let debug = require('debug')('tappytapBackend:server'),
+let debug = require('debug')('sundayfootballBackend:server'),
   db = require('../models/db'),
   http = require('http'),
   app = require('../app');
@@ -13,7 +13,7 @@ let debug = require('debug')('tappytapBackend:server'),
  * Get port from environment and store in Express.
  */
 
-let port = normalizePort(process.env.PORT || '3000');
+let port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**

@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 
-let dbURI = "mongodb://localhost:27017/tappytap";
+let dbURI = "mongodb://localhost:27017/sundayfootball";
 
 mongoose.connect(dbURI);
 
