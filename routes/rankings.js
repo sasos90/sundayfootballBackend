@@ -226,6 +226,31 @@ router.post("/getHighscores", (req, res, next) => {
     });
 });
 
+/* POST update name. */
+router.post("/updateName", (req, res, next) => {
+
+    let request = req.body;
+
+    Rank.update({
+        deviceUuid: request.deviceUuid
+    }, {
+        $set: { name: request.name }
+    }, {
+        multi: true
+    }, (err, numAffected) => {
+        if (err) {
+            res.json({
+                success: false
+            });
+            return;
+        }
+        res.json({
+            success: true,
+            numAffected: numAffected
+        });
+    });
+});
+
 let getRank = (deviceUuid, callback) => {
     Rank.find({
         deviceUuid: deviceUuid
